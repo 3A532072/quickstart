@@ -33,4 +33,27 @@
     </div>
 
     <!-- TODO: Current Tasks -->
+    @if (count($tasks) > 0)
+               <!-- 表單錯誤清單 -->
+    <div class="alert alert-danger">
+        <strong>哎呀！出了些問題！</strong>
+        <br><br>
+        <ul>
+            <tbody>
+                @foreach ($errors->all() as $error)
+                    <tr>
+                        <!-- 任務名稱 -->
+                        <td class="table-text">
+                            <div>{{ $task->name }} </div>
+                        </td>
+                        <td>
+                            <!-- 代辦：刪除按鈕 -->
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </ul>
+    </div>  
+    @endif
+
 @endsection
